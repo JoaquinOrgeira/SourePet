@@ -70,7 +70,7 @@ img {
   opacity: 1;
 }
 
-/* ✅ Media Query RESPONSIVO al FINAL */
+/* MEDIA QUERY RESPONSIVO */
 @media (max-width: 768px) {
   .slide {
     padding: 20px;
