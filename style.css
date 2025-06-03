@@ -31,7 +31,7 @@ img {
   border-radius: 10px;
 }
 
-.text-block {
+.text-block, .image-box {
   text-align: center;
   padding: 20px;
 }
@@ -70,7 +70,7 @@ img {
   opacity: 1;
 }
 
-/* ✅ MEDIA QUERY RESPONSIVE AL FINAL */
+/* ✅ MEDIA QUERY RESPONSIVO AL FINAL */
 @media (max-width: 768px) {
   .slide {
     padding: 20px;
@@ -82,12 +82,10 @@ img {
   }
 
   .controls {
-    position: fixed;
     top: auto;
     bottom: 20px;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
+    right: 50%;
+    transform: translateX(50%);
     flex-direction: row;
     gap: 20px;
   }
