@@ -23,6 +23,7 @@ body, html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 40px;
 }
 
 img {
@@ -48,32 +49,32 @@ img {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 100;
 }
 
 .controls button {
   background: #222;
   color: #fff;
   border: none;
-  padding: 12px 16px;
-  font-size: 18px;
+  padding: 12px 20px;
+  font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .controls button:hover {
   opacity: 1;
 }
 
+/* ✅ MEDIA QUERY RESPONSIVE AL FINAL */
 @media (max-width: 768px) {
   .slide {
     padding: 20px;
     justify-content: flex-start;
-  }
-
-  .text-block, .image-box {
-    text-align: center;
-    padding: 10px;
   }
 
   .text-block h2 {
@@ -82,13 +83,13 @@ img {
 
   .controls {
     position: fixed;
-    bottom: 10px;
     top: auto;
-    right: 50%;
-    transform: translateX(50%);
+    bottom: 20px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
     flex-direction: row;
     gap: 20px;
-    z-index: 1000;
   }
 
   .controls button {
