@@ -54,11 +54,14 @@ img {
   background: #222;
   color: #fff;
   border: none;
-  padding: 12px 16px;
-  font-size: 18px;
+  padding: 12px 20px;
+  font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .controls button:hover {
