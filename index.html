@@ -6,43 +6,55 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="slider">
-    <!-- Slide 1: Imagen central -->
-    <div class="slide" id="slide1">
+  <div class="slider" id="slider">
+    <!-- Slide 1 -->
+    <section class="slide">
       <img src="https://via.placeholder.com/400x300?text=Sourpet" alt="Imagem Sourpet">
-    </div>
+    </section>
 
-    <!-- Slide 2: Descripción -->
-    <div class="slide" id="slide2">
+    <!-- Slide 2 -->
+    <section class="slide">
       <div class="text-block">
         <h2>Mordedores Naturais para Cães</h2>
         <p>Feitos com chifres de búfalo da Ilha de Marajó, nossos mordedores são duráveis, naturais e seguros para seu pet.</p>
       </div>
-    </div>
+    </section>
 
-    <!-- Slide 3: Plantilla para duplicar -->
-    <div class="slide" id="slide3">
+    <!-- Slide 3 (duplicável) -->
+    <section class="slide">
       <div class="image-box">
         <img src="https://via.placeholder.com/300x200?text=Imagem+do+Produto" alt="Imagem do Produto">
         <p>Descrição do produto aqui. Edite este texto para adicionar detalhes do seu produto ou serviço.</p>
       </div>
-    </div>
+    </section>
   </div>
 
-  <!-- Controles -->
+  <!-- Controles en pantalla -->
   <div class="controls">
-    <button onclick="showSlide(0)">1</button>
-    <button onclick="showSlide(1)">2</button>
-    <button onclick="showSlide(2)">3</button>
+    <button onclick="changeSlide(-1)">⬆️</button>
+    <button onclick="changeSlide(1)">⬇️</button>
   </div>
 
   <script>
+    let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
+
     function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(-${index * 100}%)`;
-      });
+      if (index < 0) index = 0;
+      if (index >= slides.length) index = slides.length - 1;
+      currentSlide = index;
+      document.getElementById('slider').style.transform = `translateY(-${index * 100}vh)`;
     }
+
+    function changeSlide(delta) {
+      showSlide(currentSlide + delta);
+    }
+
+    // Soporte para flechas del teclado
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowUp') changeSlide(-1);
+      if (e.key === 'ArrowDown') changeSlide(1);
+    });
   </script>
 </body>
 </html>
