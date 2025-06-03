@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sourpet - Mordedores Naturais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="slider">
+    <!-- Slide 1: Imagen central -->
+    <div class="slide" id="slide1">
+      <img src="https://via.placeholder.com/400x300?text=Sourpet" alt="Imagem Sourpet">
+    </div>
+
+    <!-- Slide 2: Descripción -->
+    <div class="slide" id="slide2">
+      <div class="text-block">
+        <h2>Mordedores Naturais para Cães</h2>
+        <p>Feitos com chifres de búfalo da Ilha de Marajó, nossos mordedores são duráveis, naturais e seguros para seu pet.</p>
+      </div>
+    </div>
+
+    <!-- Slide 3: Plantilla para duplicar -->
+    <div class="slide" id="slide3">
+      <div class="image-box">
+        <img src="https://via.placeholder.com/300x200?text=Imagem+do+Produto" alt="Imagem do Produto">
+        <p>Descrição do produto aqui. Edite este texto para adicionar detalhes do seu produto ou serviço.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controles -->
+  <div class="controls">
+    <button onclick="showSlide(0)">1</button>
+    <button onclick="showSlide(1)">2</button>
+    <button onclick="showSlide(2)">3</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(-${index * 100}%)`;
+      });
+    }
+  </script>
+</body>
+</html>
